@@ -1,0 +1,1 @@
+console.log("Please use me inside app.js")
