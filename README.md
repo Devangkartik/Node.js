@@ -8,3 +8,47 @@ There is Two type of modules in NODE JS ....
 2) modern js module (which is use modern framework like React, Angular and others )
 
 
+A server is just a program that listens for requests from clients (like a browser) and sends back responses.
+
+const http = require("node:http"); // or require("http")
+
+// Create server
+const server = http.createServer((req, res) => {
+  // req = request object (info from client)
+  // res = response object (we send back info)
+
+  res.writeHead(200, { "Content-Type": "text/plain" });
+  res.end("Hello, World!"); // response body
+});
+
+// Start listening on port 3000
+server.listen(3000, () => {
+  console.log("Server is running at http://localhost:3000/");
+});
+
+
+
+<h3>How it Works</h3>
+
+Client Request
+
+You type http://localhost:3000 in your browser.
+
+The browser sends a request (HTTP GET) to your server.
+
+Server Receives Request
+
+http.createServer((req, res) => {...}) runs.
+
+req contains request details (method, URL, headers).
+
+Server Sends Response
+
+res.writeHead(200, {...}) → sets status code and headers.
+
+res.end("Hello, World!") → sends back a message.
+
+Client Displays Response
+
+Your browser shows Hello, World!
+
