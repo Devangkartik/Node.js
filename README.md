@@ -52,3 +52,13 @@ Client Displays Response
 
 Your browser shows Hello, World!
 
+Uniform Resourse locater //https://www.piyushcom/about-us?
+
+https is the protocol after then we have domain name (user frindly name and IP  addresh dispatch with thgis domain name)after domain name we have path it's used for routing..
+after then we have query parameter it's comes after question mark..
+
+HTTP Method : GET: when you want to get some data from your server. In get request we received data from our server side..
+POST : 
+PATCH : 
+DELETE : 
+PUT : 
