@@ -58,7 +58,12 @@ https is the protocol after then we have domain name (user frindly name and IP  
 after then we have query parameter it's comes after question mark..
 
 HTTP Method : GET: when you want to get some data from your server. In get request we received data from our server side..
-POST : 
-PATCH : 
+POST : when you want to change and mutate some data in server we use post request
+PATCH : when you want to change some existing entity then we use patch like update your picture profile .
 DELETE : 
 PUT : 
+
+
+Why we use Express coz of ? (npm i express)
+we handle routes through different cases that is a headech 
+need to install lots of package and module making server with the usev of http server.
