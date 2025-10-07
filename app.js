@@ -1,27 +1,56 @@
-// require('./xyz.js');
-// const {x,calculateSum} = require('./sum.js')
-// import {x,calculateSum} from './sum.js'
-// const {calculateMultiply} = require("./calculate/multiply.js");
-// const {calculateSum} = require("./calculate/sum.js")
+const express = require('express')
+const users = require('./MOCK_DATA.json');
 
-const {calculateSum,calculateMultiply} = require("./calculate");
+const app = express();
+const PORT = 5000;
 
-const data = require("./data.json");
+//Create routes fpor show all user list make hybrid server
 
-// console.log(JSON.stringify(data));
-console.log(data);
+app.get('/users', (req, res)=>{
+    res.json(users);
+})
+
+app.get('/api/users', (req,res)=>{
+    const html =`<ul>
+    ${users.map((user)=>{
+        return `<li>${user.first_name}  ${user.last_name}</li>`
+    }).join('')}
+    </ul>`;
+    res.send(html)
+})
 
 
-// It ES6 module syntax which is supported in latesst node version without  any flags 
+// get particular user via id 
+
+app.get('/api/users/:id', (req,res)=>{
+    const userId = parseInt(req.params.id);
+    const user = users.find(u => u.id === userId)
+
+    res.json(user);
+})
+
+// create a new user
+
+app.post("/api/users", (req,res)=>{
+    res.send('newe users is created successfully')
+})
+
+// update user with particular id 
+
+// app.patch('/api/users/:id', (req,res)=>{
+//       res.send('user is updated successfully' +req.params.id)
+// })
+
+// app.delete("/api/users/:id", (req,res)=>{
+//     res.send('user is deleted successfully', +req.params.id)
+// })
+
+//create a unuiversel path which is work for same route with diffrent type request methode 
+
+app.route('/api/users/:id').get().patch().delete();
 
 
-console.log("you are in app.js")
 
-var a = 10;
-var b = 30;
-
-calculateMultiply(a,b)
-calculateSum(a , b);
-// console.log(x)
-
-// console.log(globalThis===global);
+app.listen(PORT, () =>{
+    console.log('Server is running on port', PORT)
+})

@@ -1,1 +1,0 @@
-console.log("I'm xyz, Please use me inside app.js")

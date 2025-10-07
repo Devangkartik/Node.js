@@ -67,3 +67,62 @@ PUT :
 Why we use Express coz of ? (npm i express)
 we handle routes through different cases that is a headech 
 need to install lots of package and module making server with the usev of http server.
+
+versioning 
+4.18.2 there is three part of versioning 
+
+1st part ->Major/breakig update version release 
+2nd part -> recomended bug fix (Optional)
+3rd part -> Minor fixed (optional)
+
+> competible with verson with carot simbol.it's unable to do major update but it can do minor & recomended update yourself...
+^4.18.2 | 4.18.2 <  5.0.0 
+
+~ Approximately equivalent to version ( it can only change last bit versioning means only minor changes )
+
+
+Restfull api have some starnderd these are best rule which is followed by our server..rest api works on base of server client architechre
+alaways respect http method 
+1. Respect http methods (get, post, patch, put, delete) - restful api
+2. A hybrid server does 2 jobs:
+- at '/users' : render an html page (SSR), when it knows that surely a browser is the client
+- at '/api/users' : sends the data as json, so that a mobile app or react can handle that at the client side
+
+REST API - JSON
+
+GET /users - get the list of all users 
+
+GET  /users/2  get the user with particular id 
+GET  /users/1  get the user with particular id :
+
+POST /users  Create new users
+
+PATCH /users/id   Update the particular user with id
+
+DELETE /users/id    Delete the user with particular id..
+
+
+Middleware 
+
+Http Headers : its  a additional information about data request and response ..(http headers are an inportant part of the API request and response as they represent the meta data associated with the API request and response. Headers carry information for the request and response body)
+
+status code :  Http response status code indicate weather a specific http request has been successfully completed .these respomse devide into five part
+
+
+MongoDB : mongoDB is the NO-SQL Document based databse 
+strong support for aggregation pipes 
+works on BSON format
+Best for Node Application..
+
+we have collection in MongoDB and inside collection we have document 
+install MongoDB community addition 
+
+command know know more about Database : 
+show dbs
+use <db_name>
+show collection
+db.coll.find()
+db.coll.insert()
+
+Connecting MongoDB to Node.js application :
+first of all  we install the mongooseIn mongoose we have schema(we define the structure of our data) with use of these schema make model and with the help of model we do CRUD Opperation ..
